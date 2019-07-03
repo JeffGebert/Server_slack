@@ -2,26 +2,16 @@
 
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
 const app = express()
 
-
-require('dotenv').config()
+require('./db')
 
 // API
 
-app.get('/api/server', require('./controllers/properties_get'))
+app.post('/api/messages', require('./controllers/post_message'))
+app.get('/api/messages', require('./controllers/get_messages'))
 
-
-
-// serve every file inside 'client' folder as static
-app.use(express.static(path.join(__dirname, 'client')))
-
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '/client/server.html'))
-	console.log('__dirname', __dirname)
-})
-
-require('dotenv').config()
 
 
 // Run Server
