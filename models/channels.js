@@ -1,6 +1,6 @@
 const db = require('../db')
 
-const db_channel = db.model('channels',{
+const db_channel = db.model('channel',{
 
 	name: String,
 
