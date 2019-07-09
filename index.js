@@ -24,7 +24,7 @@ app.get('/api/channels', require('./controllers/get_channels'))
 app.post('/api/signup', require('./controllers/post_createuser'))
 app.get('/api/signup', require('./controllers/get_createuser'))
 app.get('/api/login', require('./controllers/login'))
-
+app.post('/api/login', require('./controllers/login'))
 // Run Server
 
 app.listen(process.env.PORT, () => {

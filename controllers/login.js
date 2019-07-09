@@ -2,12 +2,11 @@ const db_user = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-console.log('hello 43')
+
 module.exports = (req, res) => {
-	console.log(req.body)
+
 	//1.check if email exists in db
 	db_user.findOne({email: req.body.email}).then((user)=>{
-		console.log()
 		if(user){
 
 			bcrypt.compare(req.body.password,user.password, (err, match) =>{
